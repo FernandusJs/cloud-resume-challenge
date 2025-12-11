@@ -1,0 +1,22 @@
+
+LICENSE.txt
+# 1. Terraform State (CRITICAL: Contains secrets!)
+*.tfstate*
+*.tfstate.backup
+
+# 2. Terraform Provider Binaries (The huge 'terraform-provider-...' files)
+.terraform/
+*.exe
+
+# 3. Crash logs
+crash.log
+crash.log.*
+
+# 4. Plan files (main.tfplan, main.destroy.tfplan)
+*.tfplan
+
+# 5. Terraform Variable definitions (If you have secrets in them)
+*.tfvars
+*.auto.tfvars
+
+!terraform.lock.hcl
