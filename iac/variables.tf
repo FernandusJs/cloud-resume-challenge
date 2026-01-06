@@ -14,3 +14,12 @@ variable "subscription_id" {
   type        = string
   sensitive   = true #value as sensitive in plans/outputs
 }
+
+variable "cloudflare_api_token" {
+  description = "Cloudflare API key"
+  type = string
+  sensitive = true
+}
+variable "cloudflare_zone_id" {
+  type = string
+}

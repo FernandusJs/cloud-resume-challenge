@@ -8,10 +8,17 @@ terraform {
       source  = "hashicorp/random"
       version = "~>3.0"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 5"
+    }
   }
 }
 
-provider "azurerm" {
+provider "azurerm" {  
   features {}
   subscription_id = var.subscription_id
+}
+provider "cloudflare"{
+      api_token = var.cloudflare_api_token
 }

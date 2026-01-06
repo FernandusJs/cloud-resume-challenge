@@ -44,6 +44,7 @@ resource "azurerm_storage_blob" "website_blob" {
   type = "Block"
   source = "${path.module}/../frontend/${each.value}"
   depends_on = [azurerm_storage_account_static_website.static_website]
+  content_type = "text/html"
 }
 locals {
   mime_types = {
@@ -51,4 +52,15 @@ locals {
     ".css"  = "text/css"
     ".js"   = "application/javascript"
   }
+}
+resource "random_id" "random" {
+  byte_length = 8
+}
+resource "cloudflare_dns_record" "resume_dns" {
+  ttl = 1
+  zone_id = var.cloudflare_zone_id
+  name    = "www" 
+  content = azurerm_storage_account.storage_account.primary_web_host
+  type    = "CNAME"
+  proxied = true #enables cdn & ssl
 }
