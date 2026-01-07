@@ -16,6 +16,22 @@ resource "random_string" "storage_account_name" {
   special = false
   upper   = false
 }
+resource "cloudflare_dns_record" "resume_dns" {
+  ttl = 1
+  zone_id = var.cloudflare_zone_id
+  name    = "www" 
+  content = azurerm_storage_account.storage_account.primary_web_host
+  type    = "CNAME"
+  proxied = true #enables cdn & ssl
+}
+resource "cloudflare_dns_record" "asverify" {
+  ttl = 1
+  zone_id = var.cloudflare_zone_id
+  name    = "asverify.www" 
+  content = "asverify.${azurerm_storage_account.storage_account.primary_web_host}"
+  type    = "CNAME"
+  proxied = false 
+}
 
 #create storage account for static website hosting
 resource "azurerm_storage_account" "storage_account" {
@@ -27,6 +43,10 @@ resource "azurerm_storage_account" "storage_account" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
   account_kind             = "StorageV2"
+  custom_domain {
+    name           = "www.nand-beeckx.dev"
+    use_subdomain  = true # Set to true to use the asverify method
+  }
 
 }
 #enable static website hosting on the storage account
@@ -56,17 +76,27 @@ locals {
 resource "random_id" "random" {
   byte_length = 8
 }
-resource "cloudflare_dns_record" "resume_dns" {
-  ttl = 1
+
+
+resource "cloudflare_ruleset" "root_to_www_redirect" {
   zone_id = var.cloudflare_zone_id
-  name    = "www" 
-  content = azurerm_storage_account.storage_account.primary_web_host
-  type    = "CNAME"
-  proxied = true #enables cdn & ssl
-}
-#Add custom domain 
-resource "azurerm_storage_account_custom_domain" "custom_domain" {
-  storage_account_id = azurerm_storage_account.storage_account.id
-  custom_domain_name = var.custom_domain_name
-  use_subdomain_name = false
+  name    = "Root to WWW Redirect"
+  kind    = "zone"
+  phase   = "http_request_dynamic_redirect"
+
+  rules = [{
+    description = "Redirect nand-beeckx.dev to www"
+    expression  = "(http.host eq \"nand-beeckx.dev\")"
+    action      = "redirect"
+    
+    action_parameters = {
+      from_value = {
+        status_code = 301
+        target_url = {
+          expression = "concat(\"https://www.nand-beeckx.dev\", http.request.uri.path)"
+        }
+        preserve_query_string = true
+      }
+    }
+  }]
 }
