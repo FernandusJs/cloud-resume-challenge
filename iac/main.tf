@@ -58,13 +58,23 @@ resource "azurerm_storage_account_static_website" "static_website" {
 
 resource "azurerm_storage_blob" "website_blob" {
   for_each = fileset("${path.module}/../frontend", "*")
-  name = each.value
-  storage_account_name = azurerm_storage_account.storage_account.name
+  
+  name                   = each.value
+  storage_account_name   = azurerm_storage_account.storage_account.name
   storage_container_name = "$web"
-  type = "Block"
+  type                   = "Block"
+  
   source = "${path.module}/../frontend/${each.value}"
+    content_md5 = filemd5("${path.module}/../frontend/${each.value}")
+
+  content_type = lookup({
+    "html" = "text/html",
+    "css"  = "text/css",
+    "js"   = "application/javascript",
+    "png"  = "image/png"
+  }, split(".", each.value)[length(split(".", each.value)) - 1], "text/html")
+
   depends_on = [azurerm_storage_account_static_website.static_website]
-  content_type = "text/html"
 }
 locals {
   mime_types = {
