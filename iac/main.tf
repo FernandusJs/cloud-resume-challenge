@@ -64,3 +64,9 @@ resource "cloudflare_dns_record" "resume_dns" {
   type    = "CNAME"
   proxied = true #enables cdn & ssl
 }
+#Add custom domain 
+resource "azurerm_storage_account_custom_domain" "custom_domain" {
+  storage_account_id = azurerm_storage_account.storage_account.id
+  custom_domain_name = var.custom_domain_name
+  use_subdomain_name = false
+}

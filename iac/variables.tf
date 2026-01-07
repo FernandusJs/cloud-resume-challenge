@@ -23,3 +23,8 @@ variable "cloudflare_api_token" {
 variable "cloudflare_zone_id" {
   type = string
 }
+variable "custom_domain_name" {
+  type = string
+  description = "Custom domain name to link with the storage account"
+  default = "www.nand-beeckx.dev"
+}
