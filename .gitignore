@@ -20,3 +20,6 @@ crash.log.*
 *.auto.tfvars
 
 !terraform.lock.hcl
+/api/.venv/
+/api/.funcignore
+.vscode

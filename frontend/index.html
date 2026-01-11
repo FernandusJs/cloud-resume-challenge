@@ -9,11 +9,11 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
-    <header class="bg-slate-900 text-white py-16 px-6 shadow-lg">
+    <header class="bg-slate-900 text-white py-16 px-6 shadow-lg border-b-4 border-blue-500">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center">
             <div class="text-center md:text-left">
                 <h1 class="text-4xl font-bold tracking-tight">Nand Beeckx</h1>
-                <p class="text-blue-400 text-xl mt-2 font-medium">Applied Computer Science Student</p>
+                <p class="text-blue-400 text-xl mt-2 font-medium italic">Student & Aspiring Cloud Consultant</p>
                 <div class="mt-4 flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-300">
                     <span><i class="fas fa-envelope mr-2"></i>nand.beeckx@gmail.com</span>
                     <span><i class="fas fa-phone mr-2"></i>+32 468 13 56 32</span>
@@ -21,9 +21,13 @@
                 </div>
             </div>
             <div class="mt-8 md:mt-0 text-center">
-                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
-                    <p class="text-xs uppercase tracking-widest text-slate-400">Visitor Count</p>
-                    <span id="counter" class="text-2xl font-mono text-blue-400"></span>
+                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 shadow-inner">
+                    <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Visitor Count</p>
+                    <div class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-users text-blue-400"></i>
+                        <span id="counter" class="text-3xl font-mono text-blue-400 font-bold">...</span>
+                    </div>
+                    <p class="text-[10px] text-slate-500 mt-2 uppercase tracking-tighter">Serverless API / CosmosDB</p>
                 </div>
             </div>
         </div>
@@ -32,58 +36,44 @@
     <main class="max-w-4xl mx-auto py-12 px-6 space-y-12">
         
         <section>
-            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Professional Summary</h2>
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4 text-slate-900">Professional Summary</h2>
             <p class="text-lg leading-relaxed text-slate-600">
-                I am a third-year computer science student looking to break into <strong>Cloud & DevOps</strong>. 
+                I am a third-year computer science student specializing in <strong>Cloud & DevOps</strong>. 
                 Currently gaining international experience through an exchange program in Austria to broaden my 
-                technical and cultural perspectives.
+                technical and cultural perspectives. I focus on building scalable, automated infrastructure using IaC.
             </p>
         </section>
 
+        
+
         <section>
-            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">Skills & Tools</h2>
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-900">Skills & Tools</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-3">
                     <h3 class="font-bold text-slate-700 uppercase text-sm tracking-wider">Cloud & DevOps</h3>
                     <ul class="space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> GitHub Actions & CI/CD </li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Git, GitHub Actions, GitLab & CI/CD </li>
                         <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Docker & Docker Compose </li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Azure (AZ-900 Certified) </li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Azure (AZ-900 Certified) & GCP</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Terraform & Azure ARM</li>
                         <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Linux (Red Hat, Debian) </li>
                     </ul>
                 </div>
                 <div class="space-y-3">
                     <h3 class="font-bold text-slate-700 uppercase text-sm tracking-wider">Development</h3>
                     <ul class="space-y-2">
-                        <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> Java Spring Boot & TypeScript </li>
-                        <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> Python (Data Science) </li>
+                        <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> Java Spring Boot, JS, TS & C (++, #) </li>
+                        <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> Python, Spark, Kafka, MQTT, OPCUA </li>
                         <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> SQL & NoSQL Databases </li>
-                        <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> PowerShell Scripting </li>
+                        <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> PowerShell & Bash Scripting </li>
+                        <li class="flex items-center"><i class="fas fa-code text-blue-500 mr-2"></i> Nginx, Apache & Web dev </li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">Languages</h2>
-            <div class="flex flex-wrap gap-x-12 gap-y-4">
-                <div>
-                    <span class="font-bold text-slate-700 uppercase text-xs tracking-widest block">Dutch</span>
-                    <span class="text-blue-600 font-medium">Native / Fluent</span>
-                </div>
-                <div>
-                    <span class="font-bold text-slate-700 uppercase text-xs tracking-widest block">English</span>
-                    <span class="text-blue-600 font-medium">Fluent</span>
-                </div>
-                <div>
-                    <span class="font-bold text-slate-700 uppercase text-xs tracking-widest block">French</span>
-                    <span class="text-blue-600 font-medium">Decent Proficiency</span>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">Work Experience</h2>
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-900">Work Experience</h2>
             <div class="space-y-8">
                 <div class="relative pl-6 border-l-2 border-slate-200">
                     <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-500 rounded-full"></div>
@@ -99,40 +89,140 @@
         </section>
 
         <section>
-            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6">Education</h2>
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-900">Education</h2>
             <div class="space-y-6">
                 <div>
-                    <h3 class="text-xl font-bold">Software and Information Engineering (Exchange)</h3>
+                    <h3 class="text-xl font-bold text-slate-800">Software and Information Engineering (Exchange)</h3>
                     <p class="text-slate-600">FHV, Dornbirn, Austria | 2025 - 2026</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold">Bachelor of Applied Computer Science</h3>
+                    <h3 class="text-xl font-bold text-slate-800">Bachelor of Applied Computer Science</h3>
                     <p class="text-slate-600">Karel De Grote, Antwerp, Belgium | 2023 - 2026</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold">IT & Networking - TSO</h3>
+                    <h3 class="text-xl font-bold text-slate-800">IT & Networking - TSO</h3>
                     <p class="text-slate-600">Sint-Ursula Instituut, Lier, Belgium | 2020 - 2023</p>
                 </div>
             </div>
         </section>
 
-        <section class="bg-blue-50 p-8 rounded-xl text-center">
-            <h2 class="text-2xl font-bold mb-4">Check out my projects</h2>
-            <p class="mb-6 text-slate-600">Detailed work can be found on my GitHub.</p>
-            <a href="https://github.com/fernandusjs" target="_blank" class="inline-block bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:bg-slate-700 transition duration-300">
-                <i class="fab fa-github mr-2"></i> View GitHub (FERNANDUSJS)
+        <section>
+            <h2 class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 text-slate-900">Languages</h2>
+            <div class="flex flex-wrap gap-x-12 gap-y-4">
+                <div>
+                    <span class="font-bold text-slate-700 uppercase text-xs tracking-widest block">Dutch</span>
+                    <span class="text-blue-600 font-medium">Native / Fluent</span>
+                </div>
+                <div>
+                    <span class="font-bold text-slate-700 uppercase text-xs tracking-widest block">English</span>
+                    <span class="text-blue-600 font-medium">Fluent</span>
+                </div>
+                <div>
+                    <span class="font-bold text-slate-700 uppercase text-xs tracking-widest block">French</span>
+                    <span class="text-blue-600 font-medium">Proficient</span>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+    <div class="mb-8">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="bg-blue-100 p-2 rounded-lg">
+                <i class="fas fa-certificate text-blue-600 text-xl"></i>
+            </div>
+            <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">The Cloud Resume Challenge</h2>
+        </div>
+        <p class="text-slate-500 text-sm ml-12">A full-stack serverless resume project built following the guidelines described <a href="https://www.cloudresumechallenge.dev" class="hover:text-blue-700 text-blue-500">here</a></p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
+            <h3 class="font-bold text-slate-800 uppercase text-xs tracking-widest mb-5 flex items-center">
+                <span class="w-8 h-px bg-blue-500 mr-2"></span>
+                The Infrastructure Stack
+            </h3>
+            <ul class="space-y-4">
+                <li class="flex items-center text-sm group">
+                    <span class="w-24 text-blue-600 font-semibold shrink-0">CDN/DNS</span>
+                    <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Cloudflare (Full SSL & Caching)</span>
+                </li>
+                <li class="flex items-center text-sm group">
+                    <span class="w-24 text-blue-600 font-semibold shrink-0">Frontend</span>
+                    <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Azure Blob Storage (Static Web)</span>
+                </li>
+                <li class="flex items-center text-sm group">
+                    <span class="w-24 text-blue-600 font-semibold shrink-0">Compute</span>
+                    <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Azure Functions (Python v2)</span>
+                </li>
+                <li class="flex items-center text-sm group">
+                    <span class="w-24 text-blue-600 font-semibold shrink-0">Database</span>
+                    <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Azure Cosmos DB (Serverless)</span>
+                </li>
+                <li class="flex items-center text-sm group">
+                    <span class="w-24 text-blue-600 font-semibold shrink-0">IaC</span>
+                    <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Terraform (Remote Backend)</span>
+                </li>
+                <li class="flex items-center text-sm group">
+                    <span class="w-24 text-blue-600 font-semibold shrink-0">CI/CD</span>
+                    <span class="text-slate-600 group-hover:text-slate-900 transition-colors">GitHub Actions Workflow</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="relative">
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-inner">
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fab fa-cloudflare text-orange-500 text-lg"></i>
+                    <h3 class="font-bold text-slate-800 text-sm">Cloudflare Implementation</h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    Configured as the primary entry point. It manages DNS records, enforces <strong>Strict HTTPS</strong>, and leverages global edge locations to serve content with minimal latency.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-white border border-orange-200 text-orange-700 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm">DNS Proxy</span>
+                    <span class="text-[10px] bg-white border border-orange-200 text-orange-700 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm">WAF Enabled</span>
+                    <span class="text-[10px] bg-white border border-orange-200 text-orange-700 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm">Edge Caching</span>
+                </div>
+            </div>
+            <div class="absolute -top-2 -right-2 w-12 h-12 bg-blue-50 rounded-full -z-10 opacity-50"></div>
+        </div>
+    </div>
+</section>
+
+        <section class="bg-blue-600 p-8 rounded-2xl text-center text-white shadow-xl">
+            <h2 class="text-2xl font-bold mb-2">Technical Deep Dive</h2>
+            <p class="mb-6 opacity-90 font-light">Explore the Terraform configuration behind this infrastructure.</p>
+            <a href="https://github.com/FernandusJs/cloud-resume-challenge" target="_blank" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-slate-100 transition duration-300 shadow-md">
+                <i class="fab fa-github mr-2"></i> View Infrastructure Code
             </a>
         </section>
 
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 Nand Beeckx | Made for <a href="https://www.cloudresumechallenge.dev/" class="hover:text-blue-400">The Cloud Resume Challenge</a></p>
-        <div class="mt-2 flex justify-center space-x-4">
-            <a href="https://www.linkedin.com/in/nand-beeckx-338353312/" class="hover:text-blue-400">LinkedIn: Nand Beeckx</a>
-            <a href="mailto:nand.beeckx@gmail.com" class="hover:text-blue-400">Contact Me</a>
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm">
+        <p class="mb-4">© 2026 Nand Beeckx | Powered by <span class="text-orange-400 font-bold">Cloudflare CDN</span></p>
+        <div class="flex justify-center space-x-6">
+            <a href="https://www.linkedin.com/in/nand-beeckx-338353312/" class="hover:text-blue-400 transition-colors">LinkedIn</a>
+            <a href="https://www.cloudresumechallenge.dev/" class="hover:text-blue-400 transition-colors font-semibold">The Cloud Resume Challenge</a>
         </div>
     </footer>
+
+    <script>
+        const functionApi = 'https://resume-api-tlcyotqq.azurewebsites.net/api/getresumecounter'; 
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            getVisitCount();
+        });
+
+        const getVisitCount = () => {
+            fetch(functionApi)
+                .then(response => response.json())
+                .then(response => {
+                    document.getElementById('counter').innerText = response.count;
+                }).catch(function(error) {
+                    console.log(error);
+                });
+        }
+    </script>
 
 </body>
 </html>
