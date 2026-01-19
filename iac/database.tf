@@ -27,11 +27,23 @@ resource "azurerm_cosmosdb_sql_database" "resume_db" {
   name = "ResumeData"
   resource_group_name = azurerm_resource_group.cloud-resume.name
   account_name = azurerm_cosmosdb_account.cosmodb_account.name
+  depends_on = [ azurerm_cosmosdb_account.cosmodb_account ]
 }
 resource "azurerm_cosmosdb_sql_container" "counter_container" {
-  name = "Counter"
+  name = "CounterUnique"
   resource_group_name = azurerm_resource_group.cloud-resume.name
   account_name = azurerm_cosmosdb_account.cosmodb_account.name
   database_name = azurerm_cosmosdb_sql_database.resume_db.name
-  partition_key_paths = [ "/id" ]
+
+  partition_key_paths = [ "/partitionkey" ]
+  partition_key_version = 1
+
+  default_ttl = 2592000 #30 day ttl
+
+  indexing_policy {
+    included_path {
+      path = "/*"
+    }
+  }
+  depends_on = [ azurerm_cosmosdb_sql_database.resume_db ]
 }

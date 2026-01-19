@@ -22,7 +22,7 @@
             </div>
             <div class="mt-8 md:mt-0 text-center">
                 <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 shadow-inner">
-                    <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Visitor Count</p>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Unique Visitor Count</p>
                     <div class="flex items-center justify-center space-x-2">
                         <i class="fas fa-users text-blue-400"></i>
                         <span id="counter" class="text-3xl font-mono text-blue-400 font-bold">...</span>
@@ -206,23 +206,7 @@
         </div>
     </footer>
 
-    <script>
-        const functionApi = 'https://resume-api-tlcyotqq.azurewebsites.net/api/getresumecounter'; 
-
-        window.addEventListener('DOMContentLoaded', (event) => {
-            getVisitCount();
-        });
-
-        const getVisitCount = () => {
-            fetch(functionApi)
-                .then(response => response.json())
-                .then(response => {
-                    document.getElementById('counter').innerText = response.count;
-                }).catch(function(error) {
-                    console.log(error);
-                });
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
